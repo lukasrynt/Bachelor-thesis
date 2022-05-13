@@ -24,3 +24,5 @@ Notebook eurlex_corpus.ipynb obsahuje buňky pro stažení kolekce ze stránek e
 Druhý hlavní notebook eurlex_w2v.ipynb obsahuje možnosti jak dávkově trénovat modely a dále jak je vizualizovat pomocí t-SNE a PCA technik redukce dimenzionality. V poslední části je pak přítomné samotné ohodnocení modelů pomocí jednotlivých metrik P@k a `distance_sum`, které byly používány v rámci práce.
 
 Obdobně je zpracován i UFAL corpus, kde ale nejsou řešeny metriky hodnocení, neboť nedávalo příliš smysl je řešit vzhledem k objemu kolekce.
+
+Uložené modely ve složce `trained_models` jsou popsány ve formátu: `<dataset>_<typ spojení>_<velikost okna>x<velikost reprezentace>`. Ke každému modelu se váží tři soubory.
