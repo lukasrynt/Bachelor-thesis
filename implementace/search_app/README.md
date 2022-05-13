@@ -23,6 +23,8 @@ Příkaz `rails db:seed` předpokládá adresářovou strukturu, která byla pop
 
 Pro samotné vyhledávání je potřeba mít aktivované conda prostředí specifikované v ../word2vec/README.md, neboť aplikace využívá Python skript pro vyhledávání.
 
+Navíc je nutné přidat natrénovaný Word2Vec model a spočítané frekvence slov pro daný corpus, aby bylo možné hledat nejbližší překlady. Model je potřeba přidat do složky `python_search` a pojmenovat ho jako `model`. Je nutné přidat všechny tři soubory, které gensim generuje. Frekvence jsou pak do stejné složky vloženy pod jménem `en_freqs.csv` a `cz_freqs.csv`.
+
 Webová aplikace běží na adrese [localhost:3000](http://localhost:3000/).
 
 Při spuštění aplikace je pod EUR-Lex corpem možnost vygenerovat invertovaný index. Tato akce je nutná pro potřeby vyhledávání. Samotné vyhledávání je pak možné provádět z detailu kolekce.
