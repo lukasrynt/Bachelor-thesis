@@ -1,0 +1,20 @@
+<div class="card mb-2">
+  <h4 class="card-header text-center">
+    <%= document.identifier %>
+  </h4>
+  <div class="card-body">
+    <p class="card-text"><small class="text-muted">Czech</small></p>
+    <p class="card-text mx-3"><%= highlight_and_truncate document, 'cz', @engine %></p>
+    <p class="card-text"><small class="text-muted">English</small></p>
+    <p class="card-text mx-3"><%= highlight_and_truncate document, 'en', @engine %></p>
+    <% if @engine %>
+      <p class="card-text float-end">
+        <small class="text-muted">Relevance: <%= @engine.relevance_for(document).round(2) %></small>
+      </p>
+    <% end %>
+  </div>
+  <hr>
+  <div class="card-body text-center">
+    <%= link_to 'Detail', document, class: 'btn btn-primary' %>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<h1>Corpus <%= @collection.name %> inverted index</h1>
+
+<div class="card">
+  <div class="card-body">
+    <pre><%= JSON.neat_generate(@index) %></pre>
+  </div>
+</div>

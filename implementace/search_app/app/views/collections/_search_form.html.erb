@@ -1,0 +1,8 @@
+<%= form_with url: search_documents_url, method: 'get' do |f| %>
+  <div class="d-flex">
+    <%= f.text_field :query, class: 'form-control', placeholder: 'Word to search' %>
+    <%= f.select :language, [['English', :en], ['Czech', :cz]], class: 'form-select' %>
+    <%= f.hidden_field :collection_id, value: @collection.id %>
+    <%= f.submit "Search", class: 'btn btn-secondary' %>
+  </div>
+<% end %>

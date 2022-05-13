@@ -1,0 +1,39 @@
+<h1>Search results</h1>
+
+<div class="card mb-2">
+  <h4 class="card-header text-center">
+    Searched tokens
+  </h4>
+  <div class="card-body">
+    <p class="card-text"><small class="text-muted"><%= language_title(@language) %></small></p>
+    <p class="card-text mx-3"><%= @engine.queried_tokens.keys.join(', ') %></p>
+  </div>
+  <hr>
+  <div class="card-body">
+    <p class="card-text"><small class="text-muted">Searching</small></p>
+    <div class="mb-4 mx-3">
+      <%= render 'collections/search_form' %>
+    </div>
+    <div class="text-center">
+      <%= link_to 'Back to collection', collection_path(@collection.id), class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>
+
+<div class="card-columns">
+  <% @documents.each_slice(3) do |documents_row| %>
+    <div class="row">
+      <% 3.times do |i| %>
+        <div class="col">
+          <% if documents_row[i] %>
+            <%= render documents_row[i] %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<div class="d-flex justify-content-center">
+  <%== pagy_bootstrap_nav(@pagy) %>
+</div>

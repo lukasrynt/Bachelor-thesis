@@ -1,0 +1,44 @@
+<h1>Corpus <%= @collection.name %></h1>
+
+<div class="card">
+  <div class="card-body">
+    <p class="card-text"><small class="text-muted">Document count</small></p>
+    <p class="card-text mx-3"><%= @collection.documents.size %></p>
+
+    <% inverted_index = @collection.inverted_index %>
+    <% if inverted_index.present? %>
+      <p class="card-text"><small class="text-muted">Czech tokens count</small></p>
+      <p class="card-text mx-3"><%= inverted_index['cz'].keys.size %></p>
+
+      <p class="card-text"><small class="text-muted">English tokens count</small></p>
+      <p class="card-text mx-3"><%= inverted_index['en'].keys.size %></p>
+    <% end %>
+
+    <p class="card-text"><small class="text-muted">Description</small></p>
+    <p class="card-text mx-3"><%= @collection.description %></p>
+
+    <p class="card-text"><small class="text-muted">URL</small></p>
+    <%= link_to @collection.url, @collection.url, class: "card-text mx-3" %>
+
+  </div>
+  <hr>
+  <div class="card-body">
+    <p class="card-text"><small class="text-muted">Actions</small></p>
+    <div class="d-flex justify-content-begin mb-2 mx-3">
+      <%= link_to 'Documents', documents_path({ collection_id: @collection.id }), class: 'btn btn-primary' %>
+      <%= link_to (inverted_index.empty? ? 'Generate index' : 'Rebuild index'), generate_index_collection_path, class: 'btn btn-success mx-2' %>
+      <% if inverted_index %>
+        <%= link_to 'Show index', show_index_collection_path, class: 'btn btn-danger' %>
+      <% end %>
+    </div>
+  </div>
+  <% if @collection.name == 'EurLex' %>
+    <hr>
+    <div class="card-body">
+      <p class="card-text"><small class="text-muted">Searching</small></p>
+      <div class="mb-4 mx-3">
+        <%= render 'search_form' %>
+      </div>
+    </div>
+  <% end %>
+</div>

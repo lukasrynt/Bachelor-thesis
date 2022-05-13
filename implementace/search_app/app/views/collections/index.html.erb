@@ -1,0 +1,18 @@
+<h1>Corpora</h1>
+
+<% @collections.each do |collection| %>
+    <div class="card my-5">
+      <h4 class="card-header text-center">
+        <%= collection.name %>
+      </h4>
+      <div class="card-body">
+        <p>
+          <%= collection.description %>
+        </p>
+      </div>
+      <hr>
+      <div class="card-body text-center">
+        <%= link_to 'Detail', collection, class: 'btn btn-primary' %>
+      </div>
+    </div>
+<% end %>

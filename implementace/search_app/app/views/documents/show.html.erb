@@ -1,0 +1,42 @@
+<h1>Document <%= @document.identifier %></h1>
+
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col">
+        <p class="card-text"><small class="text-muted">Number of czech tokens</small></p>
+        <p class="card-text mx-3"><%= @document.czech_tokens.size %></p>
+      </div>
+      <div class="col">
+        <p class="card-text"><small class="text-muted">Number of english tokens</small></p>
+        <p class="card-text mx-3"><%= @document.english_tokens.size %></p>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col">
+        <p class="card-text"><small class="text-muted">Czech tokens</small></p>
+        <p class="card-text mx-3"><%= @document.czech_tokens.join(', ') %></p>
+      </div>
+      <div class="col">
+        <p class="card-text"><small class="text-muted">English tokens</small></p>
+        <p class="card-text mx-3"><%= @document.english_tokens.join(', ') %></p>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col">
+        <p class="card-text"><small class="text-muted">Czech</small></p>
+        <p class="card-text mx-3"><%= @document.czech_text %></p>
+      </div>
+      <div class="col">
+        <p class="card-text"><small class="text-muted">English</small></p>
+        <p class="card-text mx-3"><%= @document.english_text %></p>
+      </div>
+    </div>
+   </div>
+  <hr>
+  <div class="card-body text-center">
+    <%= link_to "Back to collection #{@document.collection.name}", @document.collection, class: 'btn btn-primary' %>
+  </div>
+</div>
