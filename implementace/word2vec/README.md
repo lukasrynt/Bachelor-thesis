@@ -19,7 +19,7 @@ Pro spuštění a zprovoznění Python prostředí je potřeba mít nainstalovan
 
 Hlavní jupyter notebooky obsahují skripty pro tvorbu kolekcí a dále pro trénování, vizualizace a hodnocení jednotlivých word2vec modelů.
 
-Notebook eurlex_corpus.ipynb obsahuje buňky pro stažení kolekce ze stránek eurlex a následné vytvoření corpu. Tento corpus je v přiloženém médiu přítomné pod složkou corpus/eurlex. Struktura odpovídá té, kterou vygeneruje daný notebook. Dále jsou v této části přítomné možnosti, jak napojovat odstavce obou jazyků na sebe. Tyto jsou opět předvygenerované.
+Notebook eurlex_corpus.ipynb obsahuje buňky pro stažení kolekce ze stránek eurlex a následné vytvoření corpu. Tento corpus je v přiloženém médiu přítomen pod složkou corpus/eurlex. Struktura odpovídá té, kterou vygeneruje daný notebook. Dále jsou v této části přítomné možnosti, jak napojovat odstavce obou jazyků na sebe. Tyto jsou opět vytvořené v přiloženém médiu.
 
 Druhý hlavní notebook eurlex_w2v.ipynb obsahuje možnosti jak dávkově trénovat modely a dále jak je vizualizovat pomocí t-SNE a PCA technik redukce dimenzionality. V poslední části je pak přítomné samotné ohodnocení modelů pomocí jednotlivých metrik P@k a `distance_sum`, které byly používány v rámci práce.
 
