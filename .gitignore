@@ -1,0 +1,7 @@
+repr.csv
+corpus/
+*/.ipynb_checkpoints/
+.idea
+trained_models/
+*.npy
+model
